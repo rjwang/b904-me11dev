@@ -1,0 +1,79 @@
+{
+  int i, j, nmtch;
+  int nchips2;
+  int xtrabits = 2;
+
+  int swtchbits = -1;
+  char pat[42], chk[42] = { 0xBA, 0xDF, 0xEE, 0xD5, 0xDE, 0xAD };
+
+
+  int pass = 0;
+  int boffset = xtrabits + swtchbits;
+
+  for (CFEBItr cfebItr = cfebs_.begin (); cfebItr != cfebs_.end (); ++cfebItr)
+    {
+
+      DEVTYPE dv = cfebItr->scamDevice ();
+      //int brdn=cfebItr->number();
+
+      cmd[0] = VTX_USR1;
+      sndbuf[0] = CHIP_MASK;
+      devdo (dv, 5, cmd, 8, sndbuf, rcvbuf, 0);
+      cmd[0] = VTX_USR2;
+      char chip_mask = cfebItr->chipMask ();
+      devdo (dv, 5, cmd, 6, &chip_mask, rcvbuf, 0);
+      nchips2 = cfebItr->buckeyeChips ().size ();
+      printf (" nchips2 %d chip_mask %04x \n", nchips2, chip_mask);
+      for (i = 0; i < 6 * nchips2; i++)
+	pat[i] = 0;
+      cmd[0] = VTX_USR1;
+      sndbuf[0] = CHIP_SHFT;
+      devdo (dv, 5, cmd, 8, sndbuf, rcvbuf, 2);
+      cmd[0] = VTX_USR2;
+      sndbuf[0] = 0xAD;
+      sndbuf[1] = 0xDE;
+      sndbuf[2] = 0xD5;
+      sndbuf[3] = 0xEE;
+      sndbuf[4] = 0xDF;
+      sndbuf[5] = 0xBA;
+      for (i = 6; i < 6 * (nchips2 + 1) + 1; i++)
+	sndbuf[i] = 0x00;
+      devdo (dv, 5, cmd, 6 * (nchips2 + 1) * 8 + xtrabits, sndbuf, rcvbuf, 1);
+      j = 0;
+      //   for(i=6*(nchips2+1);i>=6*nchips2;i--){
+      for (i = 6 * (nchips2 + 1); i >= 0; i--)
+	{
+	  printf ("shfttst %d %02X \n", i, rcvbuf[i] & 0xFF);
+	  pat[j] = pat[j] | (rcvbuf[i] << (8 - boffset));
+	  pat[j] =
+	    pat[j] | ((rcvbuf[i - 1] >> boffset) & ~(~0 << (8 - boffset)));
+	  j++;
+	}
+      nmtch = 0;
+      for (i = 0; i < 6; i++)
+	{
+	  // (*MyOutput_)<< hex <<pat[i] << dec;
+	  printf ("%02x", pat[i] & 0xff);
+	  if (pat[i] == chk[i])
+	    nmtch++;
+	}
+      printf ("\n");
+      // (*MyOutput_)<< endl;
+      if (nmtch == 6)
+	{
+	  pass = 1;
+	  (*MyOutput_) << "Pattern returned is OK\n";
+	}
+      else
+	{
+	  pass = 0;
+	  (*MyOutput_) << "Pattern returned is Wrong\n";
+	}
+      cmd[0] = VTX_USR1;
+      sndbuf[0] = NOOP;
+      devdo (dv, 5, cmd, 8, sndbuf, rcvbuf, 0);
+      cmd[0] = VTX_BYPASS;
+      devdo (dv, 5, cmd, 0, sndbuf, rcvbuf, 2);
+    }
+  return pass;
+}

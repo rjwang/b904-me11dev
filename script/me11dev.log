@@ -1,0 +1,108 @@
+
+Environment variables:
+    BUILD_HOME         = /home/cscme11/XDAQ/11/TriDAS
+    XDAQ_ROOT          = /opt/xdaq
+    XDAQ_OS            = linux
+    XDAQ_PLATFORM      = x86_64_slc5
+    XDAQ_DOCUMENT_ROOT = /opt/xdaq/htdocs
+    ROOTSYS            = /opt/cern/root_v5.32.00
+    LD_LIBRARY_PATH    = /opt/cern/root_v5.32.00/lib:/opt/xdaq/lib
+
+Executing:
+/opt/xdaq/bin/xdaq.exe  -h emume11.cern.ch  -p 9000  -c /home/cscme11/XDAQ/11/TriDAS/emu/me11dev/xml/EmuME11Dev.xml  -e /home/cscme11/XDAQ/11/TriDAS/emu/me11dev/xml/EmuME11Dev.profile
+
+AsyncDNSResolver: socket(SOCK_DGRAM) failed: Address family not supported by protocol
+21 Aug 2013 12:15:53.927 [47250270116448] WARN  root <> - Not able to resolve hostnames via DNS on host emume11.cern.ch
+21 Aug 2013 12:15:53.927 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - xdaq version: 03.35.00, compiled on Feb 21 2012 at 10:14:31, 64bit
+21 Aug 2013 12:15:53.928 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - Loaded profile: /home/cscme11/XDAQ/11/TriDAS/emu/me11dev/xml/EmuME11Dev.profile
+21 Aug 2013 12:15:53.929 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - b2innub version: 02.01.00, compiled on Dec 19 2011 at 16:29:37
+21 Aug 2013 12:15:53.929 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - executive version: 03.15.04, compiled on Dec 19 2011 at 16:29:20
+21 Aug 2013 12:15:53.929 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - pthttp version: 03.15.00, compiled on Oct  6 2012 at 21:44:20
+21 Aug 2013 12:15:53.930 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - ptfifo version: 04.01.01, compiled on Dec 19 2011 at 16:29:07
+21 Aug 2013 12:15:53.930 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - xrelay version: 03.09.00, compiled on Dec 19 2011 at 16:29:33
+21 Aug 2013 12:15:53.930 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - hyperdaq version: 04.01.02, compiled on Dec 19 2011 at 16:29:32
+21 Aug 2013 12:15:53.930 [47250270116448] DEBUG ch.cern.emume11.p:9000 <> - Create application descriptor for class: executive::Application id: 0
+21 Aug 2013 12:15:53.931 [47250270116448] INFO  ch.cern.emume11.p:9000.executive::Application.lid(0) <> - Log URL not set (was already console)
+21 Aug 2013 12:15:53.931 [47250270116448] INFO  ch.cern.emume11.p:9000.executive::Application.lid(0) <> - Log URL not set (was already console)
+21 Aug 2013 12:15:53.931 [47250270116448] INFO  ch.cern.emume11.p:9000.executive::Application.lid(0) <> - Changed Log level to INFO
+21 Aug 2013 12:15:53.931 [47250270116448] INFO  ch.cern.emume11.p:9000.executive::Application.lid(0) <> - Changed Log level to INFO
+21 Aug 2013 12:15:53.932 [47250270116448] INFO  ch.cern.emume11.p:9000.pt::http::PeerTransportHTTP.lid(1) <> - No security policies on this server
+21 Aug 2013 12:15:53.932 [47250270116448] INFO  ch.cern.emume11.p:9000.pt::http::PeerTransportHTTP.lid(1) <> - No security policies on this server
+21 Aug 2013 12:15:53.937 [47250270116448] WARN  ch.cern.emume11.p:9000 <> - Could not perform version checking on module file:/opt/xdaq/lib/libxalan-c.so, version declaration missing.
+21 Aug 2013 12:15:53.937 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - tstoreclient version: 01.16.00, compiled on Dec 19 2011 at 16:37:50
+21 Aug 2013 12:15:53.937 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - emusoap version: 11.04.00, compiled on Jun 25 2013 at 17:38:01
+21 Aug 2013 12:15:53.938 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - emubase version: 11.04.00, compiled on Jun 25 2013 at 17:37:24
+21 Aug 2013 12:15:53.939 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - EmuOnlineDB version: 11.04.00, compiled on Jun  7 2013 at 13:41:46
+21 Aug 2013 12:15:53.941 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - EmuPeripheralCore version: 11.04.00, compiled on Aug 20 2013 at 14:19:24
+21 Aug 2013 12:15:53.945 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - EmuPeripheralApps version: 11.04.00, compiled on Jul 22 2013 at 17:57:32
+21 Aug 2013 12:15:53.947 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - emume11dev version: 02.00.00, compiled on Aug 20 2013 at 15:07:51
+21 Aug 2013 12:15:53.947 [47250270116448] INFO  ch.cern.emume11.p:9000 <> - Ready.
+ME11Dev: will load XML config file: '/home/cscme11/config/pc/cscme11_YellowPageCrateConfig.xml'
+EmuEndcapParser
+Found PeripheralCrate
+Crate ID=10 Label=test_crate
+Found VCC
+Instantiate VMECC
+VMECC in slot 1
+Creating CSC Type= Label= ME-1/1/08F-
+Inside TMBParser...
+TMB: crate=10 slot=4
+Chamber is ME11->
+........................ ALCT type = 288
+............ Number of Wire Groups = 288
+........ Number of Wires per layer = 48
+.. Number of groups of delay chips =  3
+Number of collision pattern groups = 6
+.................. Number of AFEBs = 18
+...hardware AFEB indices count from 0 to 17
+..while the user indices count from 0 to 17
+DMB: crate=10 slot=5
+CCB: in crate=10 slot=13
+MPC: in crate=10 slot=12
+DDU: in crate=10 slot=7
+PeripheralCrateParser: finished looping over boards for crateID 10
+ME11Dev: configured to test TMB in slot -1
+"__action_to_call"->0
+==>HardReset
+CCB: hard reset
+VMEController : Init()
+Opening /dev/schar2
+VMEController opened socket = 8
+VMEController is using eth2
+"__action_to_call"->0
+==>HardReset
+CCB: hard reset
+"__action_to_call"->0
+==>HardReset
+CCB: hard reset
+"__action_to_call"->8
+Debug:  beginning ODMBCosmicsTest
+"time"->60
+"one_for_PassThru"->0
+CCB mode set to VMEFPGA
+CCB: hard reset
+starting DAQ...
+21 Aug 2013 12:16:28.020 [1136544064] INFO  emu::me11dev::Manager0 <> - Waited 0 sec so far for local DAQ to get Ready. It is still in Halted state.
+21 Aug 2013 12:16:29.022 [1136544064] INFO  emu::me11dev::Manager0 <> - Waited 1 sec so far for local DAQ to get Ready. It is still in Halted state.
+21 Aug 2013 12:16:30.028 [1136544064] INFO  emu::me11dev::Manager0 <> - Waited 0 sec so far for local DAQ to get Enabled. It is still in Ready state.
+21 Aug 2013 12:16:31.029 [1136544064] INFO  emu::me11dev::Manager0 <> - Waited 1 sec so far for local DAQ to get Enabled. It is still in Ready state.
+CCB: L1a Reset
+CCB: bc0 Trigger
+stopping DAQ...
+21 Aug 2013 12:17:32.059 [1136544064] INFO  emu::me11dev::Manager0 <> - Waited 0 sec so far for local DAQ to get Halted. It is still in Enabled state.
+21 Aug 2013 12:17:33.063 [1136544064] INFO  emu::me11dev::Manager0 <> - Waited 1 sec so far for local DAQ to get Halted. It is still in INDEFINITE state.
+21 Aug 2013 12:17:34.066 [1136544064] INFO  emu::me11dev::Manager0 <> - Waited 2 sec so far for local DAQ to get Halted. It is still in INDEFINITE state.
+Debug:  finished ODMBCosmicsTest
+"__action_to_call"->8
+Debug:  beginning ODMBCosmicsTest
+"time"->60
+"one_for_PassThru"->0
+CCB mode set to VMEFPGA
+CCB: hard reset
+starting DAQ...
+21 Aug 2013 12:20:01.675 [1136544064] INFO  emu::me11dev::Manager0 <> - Waited 0 sec so far for local DAQ to get Ready. It is still in Halted state.
+21 Aug 2013 12:20:02.677 [1136544064] INFO  emu::me11dev::Manager0 <> - Waited 1 sec so far for local DAQ to get Ready. It is still in Halted state.
+21 Aug 2013 12:20:03.683 [1136544064] INFO  emu::me11dev::Manager0 <> - Waited 0 sec so far for local DAQ to get Enabled. It is still in Ready state.
+21 Aug 2013 12:20:04.685 [1136544064] INFO  emu::me11dev::Manager0 <> - Waited 1 sec so far for local DAQ to get Enabled. It is still in Ready state.
+CCB: L1a Reset
+CCB: bc0 Trigger
